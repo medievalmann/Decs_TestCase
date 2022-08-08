@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  configurationmanager.api:
+    image: ${DOCKER_REGISTRY-}configurationmanagerapi
+    build:
+      context: .
+      dockerfile: ConfigurationManager.API/Dockerfile
+
+  test.api:
+    image: ${DOCKER_REGISTRY-}testapi
+    build:
+      context: .
+      dockerfile: Test.API/Dockerfile
+  redis:
+    image: redis:latest
+
